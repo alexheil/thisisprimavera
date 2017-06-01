@@ -1,0 +1,29 @@
+<%= provide(:title, @post.title) %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="fixed">
+			<div class="staticsidebar">
+				<div class="staticsidebartitle">
+					<%= @post.title %>
+				</div>
+				<div class="staticsidebarsubtitle">
+					<%= @post.author %>
+				</div>
+				<div class="staticsidebarsubtitle">
+					<%= @post.subtitle %>
+				</div>
+			</div>
+		</div>
+		<div class="staticcontent">
+			<img srcset="<%= @post.image %>" width="100%" height="auto" />
+			<div class="actualcontent">
+				<%= @post.content %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render 'partials/footer' %>

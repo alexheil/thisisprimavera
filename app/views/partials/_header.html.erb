@@ -1,0 +1,20 @@
+<div class="bar">
+	<div class="container">
+		<nav class="nav">
+			<ul>
+				<li><%= link_to 'Primavera', root_url %></li>
+				<li><%= link_to 'Products', products_path %></li>
+				<li><%= link_to 'About', about_path %></li>
+				<li><%= link_to 'Blog', posts_path %></li>
+				<li><%= link_to 'Donate', donate_path %></li>
+				<% if user_signed_in? %>
+					<li><%= link_to 'Your Page', user_path(current_user) %>
+					<li><%= link_to 'Sign Out', sign_out_path %></li>
+				<% else %>
+					<li><%= link_to 'Sign In', sign_in_path %></li>
+					<li><%= link_to 'Register', register_path %></li>
+				<% end %>
+			</ul>
+		</nav>
+	</div>
+</div>

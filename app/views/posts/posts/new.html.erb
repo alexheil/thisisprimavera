@@ -1,0 +1,44 @@
+<%= provide(:title, "New Post") %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="fixed">
+			<div class="staticsidebar">
+				<div class="staticsidebartitle">
+					NEW POST
+				</div>
+				<div class="staticsidebarsubtitle">
+					Make a new post about something, literally anything in the entire world. Hopefully people are interested in it. Hopefully... they should be.
+				</div>
+			</div>
+		</div>
+		<div class="staticcontent">
+
+			<%= form_for(@post, url: posts_path) do |f| %>
+        <div class="field">
+          <%= f.text_field :title, placeholder: "Title", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :author, placeholder: "Author", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :image, placeholder: "Image", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :subtitle, placeholder: "Subtitle", class: "text-field" %>
+        </div>
+				<div class="field">
+          <%= f.text_area :content, placeholder: "Content", class: "text-area" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Create Post", class: "submit-button" %>
+        </div>
+      <% end %>
+
+		</div>
+	</div>
+</div>
+
+<%= render 'partials/footer' %>

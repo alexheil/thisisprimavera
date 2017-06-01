@@ -1,0 +1,41 @@
+<%= provide(:title, "Register") %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="fixed">
+      <div class="staticsidebar">
+        <div class="staticsidebartitle">
+          REGISTER
+        </div>
+        <div class="staticsidebarsubtitle">
+          Here you can create an account for This Is Primavera. After that you can buy products and save the planet! Planet Earth that is!
+        </div>
+      </div>
+    </div>
+    <div class="staticcontent">
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.text_field :username, placeholder: "Username", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.email_field :email, placeholder: "Email", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "text-field" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Create Account", class: "submit-button" %>
+        </div>
+      <% end %>
+
+      <%= render "users/shared/links" %>
+
+    </div>
+  </div>
+</div>
+
+<%= render 'partials/footer' %>

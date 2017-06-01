@@ -1,0 +1,32 @@
+<div class="background"></div>
+
+<div class="container">
+	<div class="homesitetitle">
+		<%= link_to 'THIS IS PRIMAVERA', root_url %>
+	</div>
+	<div class="homeform">
+		<% if user_signed_in? %>
+			<div class="twospace centeralign">
+				Congratulations! You will now get email updates!
+			</div>
+		<% else %>
+			<div class="twospace centeralign">
+				Early registration for those who want to stay updated on what we are doing with the Earth!
+			</div>
+			<%= form_for(User.new, url: user_registration_path) do |f| %>
+	      <div class="field">
+	        <%= f.text_field :username, placeholder: "Username", class: "text-field" %>
+	      </div>
+	      <div class="field">
+	        <%= f.email_field :email, placeholder: "Email", class: "text-field" %>
+	      </div>
+	      <div class="field">
+	        <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "text-field" %>
+	      </div>
+	      <div class="actions">
+	        <%= f.submit "Sign me up!", class: "submit-button" %>
+	      </div>
+	    <% end %>
+	  <% end %>
+	</div>
+</div>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
+  	<%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+	  <% flash.each do |message_type, message| %>
+		  <% if message_type != "timedout" %>
+		  <div class="alert-<%= message_type %>">
+		    <div class="alert">
+		      <%= message %>
+		    </div>
+		  </div>
+		  <% end %>
+		<% end %>
+
+    <%= yield %>
+    
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<%= provide(:title, @product.title) %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="onespace">
+			<div class="twocolumn">
+				<%= @product.title %>
+			</div>
+			<div class="twocolumn rightalign smallfont">
+				<%= @product.element %> - Gallery
+			</div>
+		</div>
+		<div class="productstaticsidebar">
+			<div id="imageclick">
+				<img srcset="<%= @product.image1 %>" width="100%" height="auto" />
+			</div>
+		</div>
+		<div class="productstaticcontent">
+			<div class="producttitle twospace">
+				<%= @product.title %>
+			</div>
+			<div class="xtralargefont twospace">
+				<%= @product.element %>. <%= @product.mini_description %>
+			</div>
+			<div class="largefont onespace">
+				Price:
+			</div>
+			<div class="twocolumn">
+				$<%= @product.base_price %>
+			</div>
+			<div class="twocolumn">
+				w/ shipping: $<%= @product.total_price %>
+			</div>
+			<div class="largefont onespace">
+				Remaining:
+			</div>
+			<div>
+				<%= @product.quantity %>
+			</div>
+			<div class="largefont onespace">
+				Colors available:
+			</div>
+			<div>
+				<%= @product.color %>
+			</div>
+			<div class="buybutton prepurchaseformbutton">
+				Purchase
+			</div>
+			<div class="staticsidebarsubtitle">
+				<%= @product.description %>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<%= render 'partials/footer' %>
+
+<div id="back"></div>
+<div class="prepurchaseform">
+	<div class="prepurchaseforminside">
+		<div id="close"></div>
+		<img class="halfimage" srcset="<%= @product.image2 %>" width="100%" height="auto" />
+		<div>
+			<%= @product.title %>
+		</div>
+		<div>
+			Price: <%= @product.base_price %>
+		</div>
+		<div>
+			Shipping: <%= @product.shipping_price %>
+		</div>
+		<div>
+			<%= @product.size %>
+		</div>
+		<div>
+			<%= @product.color %>
+		</div>
+		<div>
+			add a price
+		</div>
+		<div>
+			Quantity:
+		</div>
+		<div class="buybutton">
+			Checkout
+		</div>
+		<div>
+      Visa, Mastercard, Discover, AMEX
+    </div>
+	</div>
+</div>
+
+<div id="back"></div>
+<div id="front">
+  <div class="lightboximage">
+  <div id="close"></div>
+    <img srcset="<%= @product.image1 %>" width="100%" height="auto" />
+  </div>
+</div>

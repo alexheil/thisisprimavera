@@ -1,0 +1,33 @@
+<%= provide(:title, "Blog") %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="fixed">
+			<div class="staticsidebar">
+				<div class="staticsidebartitle">
+					BLOG
+				</div>
+				<div class="staticsidebarsubtitle">
+					The really awesome, crazy dope blog we've got going on here at This Is Primavera.
+				</div>
+			</div>
+		</div>
+		<div class="staticcontent">
+			<% @posts.each do |post| %>
+				<div>
+				<img srcset="<%= post.image %>" width="100%" height="auto" />
+					<div class="twospace staticsidebartitle">
+						<%= link_to post.title, post_path(post) %>
+					</div>
+					<div class="twospace">
+						<%= post.subtitle %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<%= render 'partials/footer' %>

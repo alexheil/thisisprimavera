@@ -1,0 +1,36 @@
+<%= provide(:title, "Edit Profile") %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+  <div class="container">
+    <div class="fixed">
+      <div class="staticsidebar">
+        <div class="staticsidebartitle">
+          EDIT PRODUCT
+        </div>
+        <div class="staticsidebarsubtitle">
+          Edit a post about something, literally anything in the entire world. Hopefully people are interested in it. Hopefully... they should be.
+        </div>
+      </div>
+    </div>
+    <div class="staticcontent">
+
+      <%= form_for(@profile, url: user_profile_path) do |f| %>
+        <div class="field">
+          <%= f.text_field :name, placeholder: "Name", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_field :location, placeholder: "Location", class: "text-field" %>
+        </div>
+        <div class="field">
+          <%= f.text_area :description, placeholder: "Description", class: "text-area" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Edit Profile", class: "submit-button" %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<%= provide(:title, @user.username) %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+	<div class="container">
+		<div class="fixed">
+			<div class="staticsidebar">
+				<div class="staticsidebartitle">
+				<% if @user.user_profile.name.present? %>
+					<%= @user.user_profile.name %>
+				<% else %>
+					<%= @user.username %>
+				<% end %>
+				</div>
+				<% if @user.user_profile.description.present? %>
+					<div class="staticsidebarsubtitle">
+						<%= @user.user_profile.description %>
+					</div>
+				<% end %>
+				<% if @user.user_profile.location.present? %>
+					<div class="staticsidebarsubtitle">
+						<%= @user.user_profile.location %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<div class="staticcontent">
+			<div class="xtralargefont fivespace">
+				Products You've Purchased
+			</div>
+			<div>
+				List of products purchased.
+			</div>
+			<div class="xtralargefont fivespace">
+				Contributions
+			</div>
+			<div class="largefont twospace">
+				Air
+			</div>
+			<div>
+				Details of the thing here.
+			</div>
+			<div class="largefont twospace">
+				Earth
+			</div>
+			<div>
+				Details of the thing here.
+			</div>
+			<div class="largefont twospace">
+				Water
+			</div>
+			<div>
+				Details of the thing here.
+			</div>
+			<div class="largefont twospace">
+				Solar
+			</div>
+			<div>
+				Details of the thing here.
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= render 'partials/footer' %>

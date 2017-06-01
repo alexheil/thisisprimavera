@@ -1,0 +1,522 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+$main-color: #009118;
+$accent-color1: #34BC4C;
+$accent-color2: #703600;
+$accent-color3: #BA7535;
+$my-black: #212121;
+$fancy-font: 'Open Sans', Helvetica, Arial, sans-serif;
+
+/* ************ UNIVERSAL ************** */
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.75em;
+  font-family: $fancy-font;
+  font-weight: 300;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    color: $accent-color1;
+  }
+}
+
+::selection {
+  color: #fff;
+  background: $main-color;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: $main-color;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.content {
+  margin: 1vh 0;
+  width: 77%;
+  margin-right: 2%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.sidebar {
+  margin: 1vh 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.smallverticalpadding {
+	padding: 1vh 0;
+}
+
+.alertnotice {
+  width: 100%;
+  background-color: #4CAF50;
+}
+
+.alertalert {
+  width: 100%;
+  background-color: #F44336;
+}
+
+.alert {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2vh 0;
+}
+
+.accent {
+  color: $accent-color2;
+  a {
+    color: $accent-color2;
+    &:hover {
+      color: $accent-color3;
+    }
+  }
+}
+
+.smallfont {
+  font-size: .75em;
+}
+
+.largefont {
+  font-size: 1.25em;
+}
+
+.xtralargefont {
+  font-size: 1.75em;
+  line-height: 1.15em;
+}
+
+.black {
+  color: $my-black;
+}
+
+.onespace {
+  margin: 1vh 0;
+}
+
+.twospace {
+	margin: 2vh 0;
+}
+
+.fivespace {
+	margin: 5vh 0;
+}
+
+.twocolumn {
+  width: 48%;
+  margin: 1vh auto;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.centeralign {
+  text-align: center;
+}
+
+.rightalign {
+  text-align: right;
+}
+
+/* *************** HOME ************* */
+
+.background {
+  background: url('https://i.redd.it/ckih7ik60rty.jpg') no-repeat center center fixed;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+}
+
+.homesitetitle {
+	margin: 10vh 0;
+	font-size: 3em;
+	text-align: center;
+	font-weight: 900;
+	filter: alpha(opacity=85);
+  -moz-opacity: 0.85;
+  -khtml-opacity: 0.85;
+  opacity: 0.85;
+	a {
+		color: #fff;
+		&:hover {
+			color: $main-color;
+		}
+	}
+}
+
+.homeform {
+  margin: 0 auto;
+  padding: 2vh 2vw;
+  width: 40%;
+  background: rgba(255, 255, 255, .85);
+}
+
+/* *********** NAV *********** */
+
+.homebar {
+	width: 100%;
+	background: rgba(33,33,33,0.75);
+}
+
+.bar {
+	width: 100%;
+	background: $my-black;
+}
+
+.nav {
+  width: 100%;
+  display: inline-block;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      padding: 1vh 0 1vh 0;
+      position: relative;
+      margin-right: 5vw;
+    }
+  }
+}
+
+.fullfootercontainer {
+  width: 100%;
+  margin-top: 5vh;
+  font-size: .75em;
+  text-align: center;
+}
+
+/* ************** STATIC PAGES ************* */
+
+.staticcontent {
+  margin: 10vh 0 10vh 33%;
+  width: 67%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.staticsidebar {
+  margin: 10vh 0;
+  width: 90%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.productstaticcontent {
+  margin: 10vh 0;
+  width: 47%;
+  margin-left: 2%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.productstaticsidebar {
+  margin: 10vh 0;
+  width: 47%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.fixed {
+	position: fixed;
+  z-index: -5;
+  width: 30%;
+}
+
+.staticsidebartitle {
+	font-size: 2em;
+	font-weight: 900;
+}
+
+.staticsidebarsubtitle {
+	font-size: 1em;
+	word-wrap: pre-wrap;
+}
+
+.actualcontent {
+  word-break: break-word;
+  white-space: pre-line;
+  margin-bottom: 1vh;
+}
+
+/* *************** FORMS *************** */
+
+.field {
+  margin: 1vh 0;
+}
+
+.text-field {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid $main-color;
+  display: inline-block;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.text-area {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 25vh;
+  font-size: 16px;
+  font-family: $fancy-font;
+  padding: 10px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid $main-color;
+  display: inline-block;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.actions {
+  width: 100%;
+  padding-top: 10px;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 300;
+  background-color: $main-color;
+  border: 3px solid $main-color;
+  color: #fff;
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  &:hover {
+    color: $my-black;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    border: 3px solid $my-black;
+  }
+}
+
+/* ************** PRODUCTS ************** */
+
+.producttitle {
+  font-size: 2.5em;
+  font-weight: 100;
+}
+
+.buybutton {
+  cursor: pointer;
+  margin: 2vh 0;
+  width: 100%;
+  padding: 2vh 2vw;
+  border: 3px solid $main-color;
+  background: $accent-color1;
+  color: #fff;
+  text-align: center;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  box-sizing: border-box;
+  &:hover {
+    border: 3px solid $accent-color2;
+    background: $accent-color3;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+#imageclick {
+  cursor: pointer;
+}
+
+.prepurchaseform {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0 10% 0 0;
+  text-align: center;
+  z-index: 1001;
+  display: none;
+  .prepurchaseforminside {
+    width: 65%;
+    background: #fff;
+    margin: 5vh auto;
+  }
+  .halfimage {
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+#front {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1001;
+  display: none;
+  .lightboximage {
+    width: 90vh;
+    margin: 5vh auto;
+  }
+  .share-container {
+    width: 65%;
+    background: #fff;
+    margin: 5vh auto;
+    .hey {
+      height: 300px;
+      object-fit: cover;
+    }
+  }
+}
+
+#back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #212121;
+  filter: alpha(opacity=75);
+  -moz-opacity: 0.75;
+  -khtml-opacity: 0.75;
+  opacity: 0.75;
+  z-index: 1000;
+  display: none;
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+}
+
+#close {
+  display: block;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  color: $my-black;
+  text-decoration: none;
+  position: absolute;
+  z-index: 1001;
+  cursor: pointer;
+  &:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 2px;
+    z-index: 1001;
+    background: black;
+    position: absolute;
+    left: 25px;
+    top:10px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+  }
+  &:after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 2px;
+    z-index: 1001;
+    background: black;
+    position: absolute;
+    left: 25px;
+    top:10px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+  }
+}
+
+/* ************** MEDIA QUERIES *********** */
+
+@media screen and (max-width: 800px) {
+
+  .content {
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .sidebar {
+    margin: 10vh 0 1vh 0;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .staticcontent {
+  	margin: 10vh 0;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .staticsidebar {
+    margin: 10vh 0 1vh 0;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .productstaticcontent {
+    margin: 10vh 0;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .productstaticsidebar {
+    margin: 10vh 0 1vh 0;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .fixed {
+  	position: relative;
+  }
+
+}

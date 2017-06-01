@@ -1,0 +1,39 @@
+<%= provide(:title, "Products") %>
+
+<%= render 'partials/header' %>
+
+<div class="wrapper">
+	<div class="container">
+	
+		<div class="fixed">
+			<div class="staticsidebar">
+				<div class="staticsidebartitle">
+					PRODUCTS
+				</div>
+				<div class="staticsidebarsubtitle">
+					The main point of This Is Primavera is to buy products and pump money into making the environment better!
+				</div>
+			</div>
+		</div>
+
+		<div class="staticcontent">
+			<% @products.each do |product| %>
+				<div>
+				<img srcset="<%= product.image1 %>" width="100%" height="auto" />
+					<div class="twospace staticsidebartitle">
+						<%= link_to product.title, product_path(product) %>
+					</div>
+					<div class="twospace">
+						<%= product.description %>
+					</div>
+					<div class="twospace">
+						<%= product.base_price %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+
+	</div>
+</div>
+
+<%= render 'partials/footer' %>

@@ -48,8 +48,23 @@
 			<div class="buybutton prepurchaseformbutton">
 				Purchase
 			</div>
+			<div class="largefont twospace">
+				Details:
+			</div>
 			<div class="staticsidebarsubtitle">
 				<%= @product.description %>
+			</div>
+			<div class="largefont onespace">
+				Breakdown:
+			</div>
+			<div>
+				Amount to product: $<%= @product.amount_to_product %>
+			</div>
+			<div>
+				Amount to cause: $<%= @product.amount_to_cause %>
+			</div>
+			<div>
+				Amount to company: $<%= @product.amount_to_company %>
 			</div>
 
 		</div>

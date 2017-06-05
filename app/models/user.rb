@@ -10,12 +10,19 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { maximum: 50 }, format: { with: /\A[a-zA-Z0-9 ]+\Z/i }
 
   before_save :should_generate_new_friendly_id?, if: :username_changed?
+  before_save :no_username
   before_save :downcase_username
 
   private
 
     def should_generate_new_friendly_id?
       username_changed?
+    end
+
+    def no_username
+      if username.blank?
+        self.username = self.email.split("@").first
+      end
     end
 
     def downcase_username

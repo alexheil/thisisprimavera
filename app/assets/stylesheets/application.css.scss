@@ -126,8 +126,20 @@ a {
   margin: 1vh 0;
 }
 
+.onespacebottom {
+  margin-bottom: 1vh;
+}
+
 .twospace {
 	margin: 2vh 0;
+}
+
+.twospacebottom {
+  margin-bottom: 2vh;
+}
+
+.threespacebottom {
+  margin-bottom: 3vh;
 }
 
 .fivespace {
@@ -323,7 +335,7 @@ a {
   text-align: center;
   font-size: 1.25em;
   font-weight: 300;
-  background-color: $main-color;
+  background-color: $accent-color1;
   border: 3px solid $main-color;
   color: #fff;
   cursor: pointer;
@@ -332,11 +344,11 @@ a {
   -moz-transition: .3s;
   -o-transition: .3s;
   &:hover {
-    color: $my-black;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;
-    border: 3px solid $my-black;
+    border: 3px solid $accent-color2;
+    background: $accent-color3;
   }
 }
 
@@ -363,6 +375,28 @@ a {
   &:hover {
     border: 3px solid $accent-color2;
     background: $accent-color3;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+  }
+}
+
+.minibuybutton {
+  cursor: pointer;
+  margin: 2vh 0;
+  width: 100%;
+  padding: .5vh .5vw;
+  border: 1px solid $main-color;
+  color: $main-color;
+  text-align: center;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -o-transition: .3s;
+  box-sizing: border-box;
+  border-radius: 5px;
+  &:hover {
+    color: #fff;
+    background: $main-color;
     -webkit-transition: .3s;
     -moz-transition: .3s;
     -o-transition: .3s;

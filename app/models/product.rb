@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
 	extend FriendlyId
-  friendly_id :slug_candidates, use: :slugged
+  friendly_id :title, use: :slugged
 
   default_scope -> { order('id DESC') }
 
@@ -35,10 +35,6 @@ class Product < ApplicationRecord
 
     def total_price_calculator
       self.total_price = base_price + shipping_price
-    end
-
-    def slug_candidates
-      [:title, [:title, :id]]
     end
 
 end

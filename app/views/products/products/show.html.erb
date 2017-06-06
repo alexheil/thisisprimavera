@@ -1,4 +1,4 @@
-<%= provide(:title, @product.title) %>
+<%= provide(:title, sanitize(@product.title)) %>
 
 <%= render 'partials/header' %>
 
@@ -9,8 +9,14 @@
 				<%= @product.title %>
 			</div>
 			<div class="twocolumn rightalign smallfont">
-				<%= @product.element %> - Gallery
+				<%= @product.element %> - Gallery - <span class="minibuybutton prepurchaseformbutton">Buy</span>
 			</div>
+		</div>
+		<div class="fivespace producttitle centeralign">
+			<%= @product.title %>
+		</div>
+		<div class="xtralargefont centeralign threespacebottom">
+			<%= @product.element %> - <%= @product.mini_description %>
 		</div>
 		<div class="productstaticsidebar">
 			<div id="imageclick">
@@ -18,31 +24,22 @@
 			</div>
 		</div>
 		<div class="productstaticcontent">
-			<div class="producttitle twospace">
-				<%= @product.title %>
-			</div>
-			<div class="xtralargefont twospace">
-				<%= @product.element %>. <%= @product.mini_description %>
-			</div>
-			<div class="largefont onespace">
+			<div class="largefont onespacebottom">
 				Price:
 			</div>
-			<div class="twocolumn">
+			<div class="threespacebottom">
 				$<%= @product.base_price %>
-			</div>
-			<div class="twocolumn">
-				w/ shipping: $<%= @product.total_price %>
 			</div>
 			<div class="largefont onespace">
 				Remaining:
 			</div>
-			<div>
+			<div class="threespacebottom">
 				<%= @product.quantity %>
 			</div>
 			<div class="largefont onespace">
 				Colors available:
 			</div>
-			<div>
+			<div class="threespacebottom">
 				<%= @product.color %>
 			</div>
 			<div class="buybutton prepurchaseformbutton">
@@ -54,7 +51,7 @@
 			<div class="staticsidebarsubtitle">
 				<%= @product.description %>
 			</div>
-			<div class="largefont onespace">
+			<div class="largefont twospace">
 				Breakdown:
 			</div>
 			<div>

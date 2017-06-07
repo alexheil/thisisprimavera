@@ -7,11 +7,12 @@ class User < ApplicationRecord
 
   has_one :user_profile
 
-  validates :username, presence: true, uniqueness: true, length: { maximum: 50 }, format: { with: /\A[a-zA-Z0-9 ]+\Z/i }
+  validates :username, uniqueness: true, length: { maximum: 50 }
 
   before_save :should_generate_new_friendly_id?, if: :username_changed?
   before_save :no_username
   before_save :downcase_username
+  before_save :slug_create
 
   private
 
@@ -21,12 +22,16 @@ class User < ApplicationRecord
 
     def no_username
       if username.blank?
-        self.username = self.email.split("@").first
+        self.username = email.split("@").first
       end
     end
 
     def downcase_username
       self.username = username.downcase
+    end
+
+    def slug_create
+      self.slug = username if slug.blank?
     end
 
 end
